@@ -1,0 +1,51 @@
+#include <iostream>
+#include <algorithm>
+#include<vector>
+using namespace std;
+
+struct Dragon{
+        
+        // dragon(int dragonPower, int dragonBonus){
+        int power;
+        int bonus;
+
+        bool operator<(const Dragon &other)const
+        {
+            return power<other.power;
+        }
+
+
+        // }
+    };
+int main(){
+    
+    
+    int s,n;
+    cin>>s>>n;
+    vector<Dragon> dragons(n);
+    for (int i=0;i<n ;i++){
+        cin>>dragons[i].power>>dragons[i].bonus;
+
+    }
+
+    sort(dragons.begin(),dragons.end());
+    
+    bool b=true;
+    for (int i=0;i<n;i++){
+        if (s>dragons[i].power){
+            s+=dragons[i].bonus;
+        }
+        else{
+            b=false;
+            break;
+        }
+    }
+
+    if (b){
+        cout<<"YES"<<"\n";
+    }
+    else{
+        cout<<"NO"<<"\n";
+    }
+
+}

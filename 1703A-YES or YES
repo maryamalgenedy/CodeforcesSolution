@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cctype>
+using namespace std;
+int main(){
+    
+    int t;
+    string s;
+    cin>>t;
+    while(t>0){
+        cin>>s;
+        if (char(tolower(s[0]))=='y' && char(tolower(s[1]))=='e' && char(tolower(s[2]))=='s'){
+            cout<<"YES"<<"\n";
+        }
+        else{
+            cout<<"NO"<<"\n";
+        }
+        t--;
+    }
+}

@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main(){
+    
+    int t,n;
+    cin>>t;
+    while(t>0){
+        int total1=0,total2=0;
+        cin>>n;
+        int num1=n/1000;
+        int num2=n%1000;
+        while(num1>0){
+            total1+=num1%10;
+            num1=num1/10;
+        }
+        while(num2>0){
+            total2+=num2%10;
+            num2=num2/10;
+        }
+        if(total1==total2){
+            cout<<"YES"<<"\n";
+        }
+        else{
+            cout<<"NO"<<"\n";
+        }
+        t--;
+
+    }
+
+}
